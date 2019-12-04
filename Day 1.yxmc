@@ -1,0 +1,745 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.3">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="186" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="FLOOR([mass]/3)-2" field="new" size="4" type="Int32" />
+            <FormulaField expression="IF [new]&lt;=0 THEN [mass] ELSE [new] endif" field="new" size="4" type="Int32" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[new = FLOOR([mass]/3)-2
+new = IF [new]<=0 THEN [mass] ELSE [new] endif
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="mass" source="TextInput:" type="Int32" />
+            <Field name="new" source="Formula: IF [new]&lt;=0 THEN [mass] ELSE [new] endif" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="306" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[mass]=[new]</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2019-12-01 14:45:32</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2019-12-01 14:45:32</StartDate>
+              <EndDate>2019-12-01 14:45:32</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[mass]=[new]</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="mass" source="TextInput:" type="Int32" />
+            <Field name="new" source="Formula: IF [new]&lt;=0 THEN [mass] ELSE [new] endif" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="mass" source="TextInput:" type="Int32" />
+            <Field name="new" source="Formula: IF [new]&lt;=0 THEN [mass] ELSE [new] endif" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="414" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="mass" selected="False" />
+            <SelectField field="new" selected="True" rename="mass" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="mass" source="Formula: IF [new]&lt;=0 THEN [mass] ELSE [new] endif" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="522" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>iter</Name>
+          <Abbrev>i</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="534" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output7</Name>
+          <Abbrev>o</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="402" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="mass" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="new" source="Formula: IF [new]&lt;=0 THEN [mass] ELSE [new] endif" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="90" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Input10</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="100" />
+              <Fields>
+                <Field name="RecordID" />
+                <Field name="mass" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>1</c>
+                  <c>105311</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>117290</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>97762</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>124678</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>132753</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>114635</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>114137</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>96208</c>
+                </r>
+                <r>
+                  <c>9</c>
+                  <c>82957</c>
+                </r>
+                <r>
+                  <c>10</c>
+                  <c>148510</c>
+                </r>
+                <r>
+                  <c>11</c>
+                  <c>75509</c>
+                </r>
+                <r>
+                  <c>12</c>
+                  <c>120845</c>
+                </r>
+                <r>
+                  <c>13</c>
+                  <c>80279</c>
+                </r>
+                <r>
+                  <c>14</c>
+                  <c>112588</c>
+                </r>
+                <r>
+                  <c>15</c>
+                  <c>136983</c>
+                </r>
+                <r>
+                  <c>16</c>
+                  <c>91546</c>
+                </r>
+                <r>
+                  <c>17</c>
+                  <c>55087</c>
+                </r>
+                <r>
+                  <c>18</c>
+                  <c>98239</c>
+                </r>
+                <r>
+                  <c>19</c>
+                  <c>58629</c>
+                </r>
+                <r>
+                  <c>20</c>
+                  <c>59526</c>
+                </r>
+                <r>
+                  <c>21</c>
+                  <c>121740</c>
+                </r>
+                <r>
+                  <c>22</c>
+                  <c>133887</c>
+                </r>
+                <r>
+                  <c>23</c>
+                  <c>96246</c>
+                </r>
+                <r>
+                  <c>24</c>
+                  <c>53621</c>
+                </r>
+                <r>
+                  <c>25</c>
+                  <c>88458</c>
+                </r>
+                <r>
+                  <c>26</c>
+                  <c>144101</c>
+                </r>
+                <r>
+                  <c>27</c>
+                  <c>67449</c>
+                </r>
+                <r>
+                  <c>28</c>
+                  <c>114870</c>
+                </r>
+                <r>
+                  <c>29</c>
+                  <c>75125</c>
+                </r>
+                <r>
+                  <c>30</c>
+                  <c>126117</c>
+                </r>
+                <r>
+                  <c>31</c>
+                  <c>118155</c>
+                </r>
+                <r>
+                  <c>32</c>
+                  <c>108888</c>
+                </r>
+                <r>
+                  <c>33</c>
+                  <c>128347</c>
+                </r>
+                <r>
+                  <c>34</c>
+                  <c>121556</c>
+                </r>
+                <r>
+                  <c>35</c>
+                  <c>65380</c>
+                </r>
+                <r>
+                  <c>36</c>
+                  <c>106487</c>
+                </r>
+                <r>
+                  <c>37</c>
+                  <c>149660</c>
+                </r>
+                <r>
+                  <c>38</c>
+                  <c>89018</c>
+                </r>
+                <r>
+                  <c>39</c>
+                  <c>118897</c>
+                </r>
+                <r>
+                  <c>40</c>
+                  <c>91556</c>
+                </r>
+                <r>
+                  <c>41</c>
+                  <c>147829</c>
+                </r>
+                <r>
+                  <c>42</c>
+                  <c>123137</c>
+                </r>
+                <r>
+                  <c>43</c>
+                  <c>130352</c>
+                </r>
+                <r>
+                  <c>44</c>
+                  <c>51301</c>
+                </r>
+                <r>
+                  <c>45</c>
+                  <c>102756</c>
+                </r>
+                <r>
+                  <c>46</c>
+                  <c>83357</c>
+                </r>
+                <r>
+                  <c>47</c>
+                  <c>97466</c>
+                </r>
+                <r>
+                  <c>48</c>
+                  <c>78364</c>
+                </r>
+                <r>
+                  <c>49</c>
+                  <c>82291</c>
+                </r>
+                <r>
+                  <c>50</c>
+                  <c>83367</c>
+                </r>
+                <r>
+                  <c>51</c>
+                  <c>72243</c>
+                </r>
+                <r>
+                  <c>52</c>
+                  <c>107128</c>
+                </r>
+                <r>
+                  <c>53</c>
+                  <c>87975</c>
+                </r>
+                <r>
+                  <c>54</c>
+                  <c>93719</c>
+                </r>
+                <r>
+                  <c>55</c>
+                  <c>114888</c>
+                </r>
+                <r>
+                  <c>56</c>
+                  <c>71559</c>
+                </r>
+                <r>
+                  <c>57</c>
+                  <c>57757</c>
+                </r>
+                <r>
+                  <c>58</c>
+                  <c>145975</c>
+                </r>
+                <r>
+                  <c>59</c>
+                  <c>74254</c>
+                </r>
+                <r>
+                  <c>60</c>
+                  <c>102427</c>
+                </r>
+                <r>
+                  <c>61</c>
+                  <c>117302</c>
+                </r>
+                <r>
+                  <c>62</c>
+                  <c>118842</c>
+                </r>
+                <r>
+                  <c>63</c>
+                  <c>105979</c>
+                </r>
+                <r>
+                  <c>64</c>
+                  <c>134735</c>
+                </r>
+                <r>
+                  <c>65</c>
+                  <c>123676</c>
+                </r>
+                <r>
+                  <c>66</c>
+                  <c>83647</c>
+                </r>
+                <r>
+                  <c>67</c>
+                  <c>101511</c>
+                </r>
+                <r>
+                  <c>68</c>
+                  <c>117834</c>
+                </r>
+                <r>
+                  <c>69</c>
+                  <c>70884</c>
+                </r>
+                <r>
+                  <c>70</c>
+                  <c>88288</c>
+                </r>
+                <r>
+                  <c>71</c>
+                  <c>55444</c>
+                </r>
+                <r>
+                  <c>72</c>
+                  <c>71415</c>
+                </r>
+                <r>
+                  <c>73</c>
+                  <c>143464</c>
+                </r>
+                <r>
+                  <c>74</c>
+                  <c>142131</c>
+                </r>
+                <r>
+                  <c>75</c>
+                  <c>51118</c>
+                </r>
+                <r>
+                  <c>76</c>
+                  <c>109435</c>
+                </r>
+                <r>
+                  <c>77</c>
+                  <c>87841</c>
+                </r>
+                <r>
+                  <c>78</c>
+                  <c>107406</c>
+                </r>
+                <r>
+                  <c>79</c>
+                  <c>71379</c>
+                </r>
+                <r>
+                  <c>80</c>
+                  <c>124659</c>
+                </r>
+                <r>
+                  <c>81</c>
+                  <c>79427</c>
+                </r>
+                <r>
+                  <c>82</c>
+                  <c>110357</c>
+                </r>
+                <r>
+                  <c>83</c>
+                  <c>114485</c>
+                </r>
+                <r>
+                  <c>84</c>
+                  <c>141168</c>
+                </r>
+                <r>
+                  <c>85</c>
+                  <c>62923</c>
+                </r>
+                <r>
+                  <c>86</c>
+                  <c>113921</c>
+                </r>
+                <r>
+                  <c>87</c>
+                  <c>106154</c>
+                </r>
+                <r>
+                  <c>88</c>
+                  <c>67468</c>
+                </r>
+                <r>
+                  <c>89</c>
+                  <c>132601</c>
+                </r>
+                <r>
+                  <c>90</c>
+                  <c>76112</c>
+                </r>
+                <r>
+                  <c>91</c>
+                  <c>84953</c>
+                </r>
+                <r>
+                  <c>92</c>
+                  <c>124290</c>
+                </r>
+                <r>
+                  <c>93</c>
+                  <c>55476</c>
+                </r>
+                <r>
+                  <c>94</c>
+                  <c>88965</c>
+                </r>
+                <r>
+                  <c>95</c>
+                  <c>107153</c>
+                </r>
+                <r>
+                  <c>96</c>
+                  <c>148407</c>
+                </r>
+                <r>
+                  <c>97</c>
+                  <c>62584</c>
+                </r>
+                <r>
+                  <c>98</c>
+                  <c>112851</c>
+                </r>
+                <r>
+                  <c>99</c>
+                  <c>71564</c>
+                </r>
+                <r>
+                  <c>100</c>
+                  <c>145569</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="mass" source="TextInput:" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="False" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Input (10)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Day 1</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (5)</Name>
+          <ToolId value="5" />
+          <Questions>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (7)</Description>
+              <Name>Macro Output (7)</Name>
+              <ToolId value="7" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (6)</Description>
+              <Name>Macro Output (6)</Name>
+              <ToolId value="6" />
+            </Question>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (10)</Name>
+              <ToolId value="10" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>Input10</Input>
+        <Output>iter</Output>
+        <IterationLimit value="200" />
+        <LimitBehavior>Warn</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="6" Selected="True" />
+        <Tool ToolId="7" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>
